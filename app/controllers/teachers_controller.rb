@@ -40,7 +40,7 @@ class TeachersController < ApplicationController
 
   def destroy
     @teacher.destroy
-    redirect_to songs_url
+    redirect_to teacher_url
   end
 
   private
