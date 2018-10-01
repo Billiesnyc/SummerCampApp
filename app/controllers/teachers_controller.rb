@@ -21,7 +21,7 @@ class TeachersController < ApplicationController
       redirect_to @teacher
     else
       flash[:errors] = @teacher.errors.full_messages
-      redirect_to new_activity_path
+      redirect_to new_teacher_path
     end
   end
 

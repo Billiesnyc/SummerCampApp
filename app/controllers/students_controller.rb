@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :set_camps, only: [:new, :edit]
-  before_action :set_activities, only: [:new, :edit]
+
 
   def index
     @students = Student.all
@@ -57,7 +57,5 @@ class StudentsController < ApplicationController
     @camps = Camp.all.sort_by { |c| c.name }
   end
 
-  def set_activities
-    @activities = Activity.all.sort_by { |a| a.name }
-  end
+
 end

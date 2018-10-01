@@ -2600,3 +2600,245 @@ Processing by CampsController#show as HTML
 Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/camps/new" for 127.0.0.1 at 2018-10-01 16:48:49 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/billieadmin/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CampsController#new as HTML
+  Rendering camps/new.html.erb within layouts/application
+  Rendered camps/_errors.html.erb (1.0ms)
+  Rendered camps/_form.html.erb (2.8ms)
+  Rendered camps/new.html.erb within layouts/application (36.8ms)
+Completed 500 Internal Server Error in 172ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/Users/billieadmin/Development/SummerCampApp/app/views/camps/_form.html.erb:3: syntax error, unexpected tSTRING_BEG, expecting ')'
+...buffer.append=( f.label :name "Name of Camp:" );@output_buff...
+...                               ^
+/Users/billieadmin/Development/SummerCampApp/app/views/camps/_form.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+...er.append=( f.label :username "Username:" );@output_buffer.s...
+...                               ^
+/Users/billieadmin/Development/SummerCampApp/app/views/camps/_form.html.erb:11: syntax error, unexpected tSTRING_BEG, expecting ')'
+...er.append=( f.label :password "Password:" );@output_buffer.s...
+...                               ^
+/Users/billieadmin/Development/SummerCampApp/app/views/camps/_form.html.erb:15: syntax error, unexpected tSTRING_BEG, expecting ')'
+...er.append=( f.label :location "Location:" );@output_buffer.s...
+...                               ^):
+  
+app/views/camps/_form.html.erb:3: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/camps/_form.html.erb:7: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/camps/_form.html.erb:11: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/camps/_form.html.erb:15: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/camps/new.html.erb:2:in `_app_views_camps_new_html_erb__4064027638737105166_70123700443900'
+Started GET "/camps/new" for 127.0.0.1 at 2018-10-01 16:49:06 +0100
+Processing by CampsController#new as HTML
+  Rendering camps/new.html.erb within layouts/application
+  Rendered camps/_errors.html.erb (0.4ms)
+  Rendered camps/_form.html.erb (129.2ms)
+  Rendered camps/new.html.erb within layouts/application (135.7ms)
+Completed 200 OK in 1659ms (Views: 1655.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/camps/new" for 127.0.0.1 at 2018-10-01 16:49:22 +0100
+Processing by CampsController#new as HTML
+  Rendering camps/new.html.erb within layouts/application
+  Rendered camps/_errors.html.erb (0.6ms)
+  Rendered camps/_form.html.erb (2.3ms)
+  Rendered camps/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 137ms (Views: 132.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/camps/new" for 127.0.0.1 at 2018-10-01 16:49:36 +0100
+Processing by CampsController#new as HTML
+  Rendering camps/new.html.erb within layouts/application
+  Rendered camps/_errors.html.erb (1.4ms)
+  Rendered camps/_form.html.erb (206.1ms)
+  Rendered camps/new.html.erb within layouts/application (214.1ms)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `password' for #<ActionView::Helpers::FormBuilder:0x007f8de1c53cf0>
+Did you mean?  password_field):
+     5:   </div>
+     6:   <div class="field">
+     7:     <%= f.label :password, "Password:" %><br>
+     8:     <%= f.password :password %>
+     9:   </div>
+    10:   <div class="field">
+    11:     <%= f.label :location, "Location:" %><br>
+  
+app/views/camps/_form.html.erb:8:in `block in _app_views_camps__form_html_erb___2538682537649890892_70123677387700'
+app/views/camps/_form.html.erb:1:in `_app_views_camps__form_html_erb___2538682537649890892_70123677387700'
+app/views/camps/new.html.erb:2:in `_app_views_camps_new_html_erb__4064027638737105166_70123673911620'
+Started GET "/camps/new" for 127.0.0.1 at 2018-10-01 16:49:49 +0100
+Processing by CampsController#new as HTML
+  Rendering camps/new.html.erb within layouts/application
+  Rendered camps/_errors.html.erb (0.4ms)
+  Rendered camps/_form.html.erb (23.2ms)
+  Rendered camps/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 176ms (Views: 172.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/camps" for 127.0.0.1 at 2018-10-01 16:49:59 +0100
+Processing by CampsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GQ0TNPvc0TMJUXF75ctu4Z7nhJEXiC6bcM+7YNOcTgGV3SWnDXV44yaoiThUUxScyEClOpcSg315c87QUUxGBA==", "camp"=>{"username"=>"user", "password"=>"[FILTERED]", "location"=>"China", "name"=>"Test Camp"}, "commit"=>"Create Camp"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/camps_controller.rb:18
+  [1m[36mCamp Create (3.7ms)[0m  [1m[32mINSERT INTO "camps" ("name", "username", "password", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Test Camp"], ["username", "user"], ["password", "password"], ["location", "China"], ["created_at", "2018-10-01 15:49:59.593916"], ["updated_at", "2018-10-01 15:49:59.593916"]]
+  ↳ app/controllers/camps_controller.rb:18
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/camps_controller.rb:18
+Redirected to http://localhost:3000/camps/7
+Completed 302 Found in 12ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/camps/7" for 127.0.0.1 at 2018-10-01 16:49:59 +0100
+Processing by CampsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/camps_controller.rb:47
+  Rendering camps/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/views/camps/show.html.erb:3
+  Rendered camps/show.html.erb within layouts/application (130.4ms)
+Completed 200 OK in 289ms (Views: 227.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/camps/" for 127.0.0.1 at 2018-10-01 16:50:02 +0100
+Processing by CampsController#index as HTML
+  Rendering camps/index.html.erb within layouts/application
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/views/camps/index.html.erb:6
+  Rendered camps/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 70ms (Views: 60.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/camps/7" for 127.0.0.1 at 2018-10-01 16:50:03 +0100
+Processing by CampsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/camps_controller.rb:47
+  Rendering camps/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."camp_id" = ?[0m  [["camp_id", 7]]
+  ↳ app/views/camps/show.html.erb:3
+  Rendered camps/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 86ms (Views: 78.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/camps/new" for 127.0.0.1 at 2018-10-01 16:50:07 +0100
+Processing by CampsController#new as HTML
+  Rendering camps/new.html.erb within layouts/application
+  Rendered camps/_errors.html.erb (0.8ms)
+  Rendered camps/_form.html.erb (5.2ms)
+  Rendered camps/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 105ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/camps/7/edit" for 127.0.0.1 at 2018-10-01 16:50:25 +0100
+Processing by CampsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCamp Load (0.1ms)[0m  [1m[34mSELECT  "camps".* FROM "camps" WHERE "camps"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/camps_controller.rb:47
+  Rendering camps/edit.html.erb within layouts/application
+  Rendered camps/_errors.html.erb (0.5ms)
+  Rendered camps/_form.html.erb (2.8ms)
+  Rendered camps/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 120ms (Views: 115.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2018-10-01 16:51:37 +0100
+Processing by StudentsController#new as HTML
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/students_controller.rb:61
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `name' for #<Activity:0x007f8de78ca510>):
+  
+app/controllers/students_controller.rb:61:in `block in set_activities'
+app/controllers/students_controller.rb:61:in `sort_by'
+app/controllers/students_controller.rb:61:in `set_activities'
+Started GET "/students/new" for 127.0.0.1 at 2018-10-01 16:52:15 +0100
+Processing by StudentsController#new as HTML
+  [1m[36mCamp Load (0.3ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_errors.html.erb (1.0ms)
+  Rendered students/_form.html.erb (5.6ms)
+  Rendered students/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 316ms (Views: 243.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2018-10-01 16:52:29 +0100
+Processing by StudentsController#new as HTML
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_errors.html.erb (0.4ms)
+  Rendered students/_form.html.erb (1.9ms)
+  Rendered students/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 167ms (Views: 162.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2018-10-01 16:52:35 +0100
+Processing by StudentsController#new as HTML
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_errors.html.erb (0.5ms)
+  Rendered students/_form.html.erb (2.0ms)
+  Rendered students/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 76ms (Views: 71.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2018-10-01 16:52:42 +0100
+Processing by StudentsController#new as HTML
+  [1m[36mCamp Load (0.4ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_errors.html.erb (0.7ms)
+  Rendered students/_form.html.erb (2.1ms)
+  Rendered students/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 107ms (Views: 101.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2018-10-01 16:52:47 +0100
+Processing by StudentsController#new as HTML
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_errors.html.erb (0.6ms)
+  Rendered students/_form.html.erb (2.0ms)
+  Rendered students/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 68ms (Views: 63.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2018-10-01 16:52:51 +0100
+Processing by StudentsController#new as HTML
+  [1m[36mCamp Load (0.2ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_errors.html.erb (0.7ms)
+  Rendered students/_form.html.erb (1.8ms)
+  Rendered students/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 71ms (Views: 67.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/students/1/edit" for 127.0.0.1 at 2018-10-01 16:54:27 +0100
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:49
+  [1m[36mCamp Load (0.7ms)[0m  [1m[34mSELECT "camps".* FROM "camps"[0m
+  ↳ app/controllers/students_controller.rb:57
+  Rendering students/edit.html.erb within layouts/application
+  Rendered students/_errors.html.erb (1.4ms)
+  Rendered students/_form.html.erb (8.1ms)
+  Rendered students/edit.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 308ms (Views: 277.6ms | ActiveRecord: 2.0ms)
+
+
